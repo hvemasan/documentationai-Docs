@@ -1,0 +1,119 @@
+---
+title: Changelog
+description: Review the version history of ResumeUp.AI to see recent updates, new features, and improvements.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+Stay updated with the latest changes to ResumeUp.AI. Check this changelog regularly for new AI enhancements, bug fixes, and performance improvements.
+</Callout>
+
+<Update label="2024-10-15" description="v2.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added AI-powered cover letter generator that matches your resume style and job description.
+- Introduced real-time ATS score preview during resume editing.
+- New template gallery with 10+ additional ATS-friendly designs for tech and creative roles.
+
+## Improvements
+
+- Enhanced AI suggestions for bullet points with industry-specific keywords.
+- Faster resume export speeds, now `<2s` for PDF generation.
+
+## Bug Fixes
+
+- Fixed occasional template rendering issues on mobile devices.
+- Resolved LinkedIn import failures for profiles with custom sections.
+
+</Update>
+
+<Update label="2024-09-25" description="v2.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Complete redesign of the dashboard with drag-and-drop resume builder.
+- Integrated job tracker that syncs with 50+ job boards.
+- AI interview prep module with mock questions based on your resume.
+
+## Breaking Changes
+
+- Updated API endpoints for resume exports; migrate to `/v2/resumes/{id}/export`.
+
+## Bug Fixes
+
+- Patched security vulnerability in file upload handling.
+- Improved accessibility for screen readers in the editor.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.5.0" tags={["bugfix", "improvement"]}>
+
+## Improvements
+
+- Optimized AI model for better keyword matching, increasing ATS pass rates by 15%.
+- Added dark mode support across the entire application.
+
+## Bug Fixes
+
+- Fixed crash when importing resumes with embedded images.
+- Corrected export formatting for international date formats.
+
+## Deprecated
+
+- Legacy template editor removed; use the new AI builder instead.
+
+</Update>
+
+## Upcoming Roadmap
+
+<Columns cols={3}>
+  <Card title="AI Enhancements" icon="zap" href="#">
+    Advanced personalization with resume scoring against specific job postings.
+  </Card>
+  <Card title="Integrations" icon="link" href="#">
+    Native support for Applicant Tracking Systems like Workable and Greenhouse.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#">
+    Team sharing for resume reviews and feedback loops.
+  </Card>
+</Columns>
+
+## How to Check for Updates
+
+<Steps>
+  <Step title="Access Dashboard" icon="monitor">
+    Log in to your account at `https://dashboard.resumeup.ai`.
+  </Step>
+  <Step title="Review Notifications" icon="bell">
+    Check the bell icon in the top-right for update alerts.
+  </Step>
+  <Step title="Manual Refresh" icon="refresh-cw">
+    Go to Settings > About to see your current version and refresh data.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+Subscribe to our newsletter or follow us on Product Hunt for early access to beta features.
+</Callout>
+
+<Expandable title="Detailed Migration Guide for v2.0.0" default-open="false">
+
+If you relied on the old export API:
+
+````javascript
+// Old endpoint (deprecated)
+fetch('https://api.resumeup.ai/v1/resumes/export');
+
+// New endpoint
+fetch('https://api.resumeup.ai/v2/resumes/{id}/export', {
+  headers: {
+    Authorization: `Bearer ${YOUR_API_KEY}`
+  }
+});
+````
+
+Update your integrations accordingly to avoid disruptions.
+
+</Expandable>
